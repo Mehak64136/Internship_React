@@ -1,0 +1,91 @@
+/* Center the card on screen */
+body {
+  margin: 0;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* Card Container */
+.whole {
+  height: 280px;
+  width: 500px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  overflow: hidden;
+}
+
+/* Left Section */
+.left {
+  width: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.upper {
+  display: flex;
+  flex-direction: column;
+}
+
+.he1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.para1 {
+  margin: 4px 0 0 0;
+  font-size: 16px;
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+/* Contact Info list */
+.lower {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lower p {
+  margin: 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* Right Section */
+.right {
+  width: 200px;
+  background-color: #4f46e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.initialst {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.initials {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #4f46e5;
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
