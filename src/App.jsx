@@ -5,20 +5,27 @@ import { useState } from "react";
 import Navbar from './components/Navbar'
 // import Cardcart from './components/Cardcart'
 import MainLanding from './components/MainLanding'
-import MyFirsTusestate from './components/MyFirsTusestate'
-import Checksyntheticevent from './components/Checksyntheticevent'
+// import MyFirsTusestate from './components/MyFirsTusestate'
+// import Checksyntheticevent from './components/Checksyntheticevent'
+import Formvalid from './components/Formvalid'
+import Studentregis from './components/Studentregis';
 
 const App = ()=>{
   const [cart,setCart]=useState([]);
   const [showCart,setShowCart]=useState(false);
+  const [search, setSearch] = useState("");
   return(
     <div>
-      <MyFirsTusestate/>
-      <Checksyntheticevent/>
+      <Studentregis/>
+      <Formvalid/>
+      {/* <MyFirsTusestate/> */}
+      {/* <Checksyntheticevent/> */}
         <Navbar
         cart={cart}
         showCart={showCart}
         setShowCart={setShowCart}
+        search={search}
+        setSearch={setSearch}
         />
         
         
@@ -44,7 +51,7 @@ const App = ()=>{
          {/* <Cardcart/> */}
       
    
-      <MainLanding cart={cart} setCart={setCart}/>
+      <MainLanding cart={cart} setCart={setCart} search={search} setSearch={setSearch}/>
 
     </div>
   )

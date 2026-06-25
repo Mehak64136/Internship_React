@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = ({ cart, showCart, setShowCart }) => {
+const Navbar = ({ cart, showCart, setShowCart, search, setSearch }) => {
   return (
     <nav
       style={{
@@ -20,7 +20,7 @@ const Navbar = ({ cart, showCart, setShowCart }) => {
           width:"300px",
           borderRadius:"10px",
           border:"none",
-        }} type="text" placeholder="Search..."  />
+        }} type="text" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
 
       <div
         style={{
