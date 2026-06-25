@@ -4,7 +4,7 @@ function Cart(props) {
   return (
     <div>
        
-        <div style={{width:"210px",height:"350px",backgroundColor:"white",border:"1px solid black",borderRadius:"5px",objectFit:"cover",margin:"2px"}}>
+        <div style={{width:"210px",height:"350px",backgroundColor:"white",border:"1px solid white",borderRadius:"5px",objectFit:"cover",margin:"2px"}}>
             <img src={props.productimage} alt=""  height={140} width={180}/>
             <p style={{margin:"0",color:"blue"}}>{props.productdes}</p>
             <h3 style={{margin:"5px",display:"inline",color:"red"}}>{props.proddis}</h3>
