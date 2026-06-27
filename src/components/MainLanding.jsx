@@ -252,7 +252,7 @@ const filteredProducts=productList.filter((product)=>product.title.toLowerCase()
           </button>
         </div>
       ))}
-     
+      
 
     </div>
     
