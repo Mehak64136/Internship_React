@@ -41,7 +41,7 @@ const Navbar = ({ cart, showCart, setShowCart, search, setSearch }) => {
           marginBottom: "25px",
           background: "linear-gradient(to right, #ebf4f5, #b5c6e0)",
           color: "black"
-        }}>
+        }} >
           Theme Change
         </button>
 
@@ -55,6 +55,7 @@ const Navbar = ({ cart, showCart, setShowCart, search, setSearch }) => {
           background: "linear-gradient(to right, #ebf4f5, #b5c6e0)",
           color: "black"
         }}>Home</NavLink>
+
         <NavLink to='/about' style={{
           padding: "7px",
           width: "50px",
@@ -64,6 +65,7 @@ const Navbar = ({ cart, showCart, setShowCart, search, setSearch }) => {
           background: "linear-gradient(to right, #ebf4f5, #b5c6e0)",
           color: "black"
         }}>About</NavLink>
+
         <NavLink to='/home' style={{
           padding: "7px",
           width: "50px",
@@ -72,8 +74,9 @@ const Navbar = ({ cart, showCart, setShowCart, search, setSearch }) => {
           marginBottom: "25px",
           background: "linear-gradient(to right, #ebf4f5, #b5c6e0)",
           color: "black"
-        }}>Main</NavLink>
-        <NavLink to='/contact' style={{
+        }}>Form</NavLink>
+        
+        <NavLink to='/cart' style={{
           padding: "7px",
           width: "50px",
           border: "none",
@@ -81,7 +84,7 @@ const Navbar = ({ cart, showCart, setShowCart, search, setSearch }) => {
           marginBottom: "25px",
           background: "linear-gradient(to right, #ebf4f5, #b5c6e0)",
           color: "black"
-        }}>contact</NavLink>
+        }}>Cart</NavLink>
 
         <button
           onClick={() => setShowCart(!showCart)}

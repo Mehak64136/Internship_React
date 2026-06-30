@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState } from "react";
+import { useState, useReducer } from "react";
 // import './App.css'
 // import Visitingcard from './components/visitingcard'
 import Navbar from './components/Navbar'
-// import Cardcart from './components/Cardcart'
+import Ccart from './components/Ccart';
 import MainLanding from './components/MainLanding'
 // import MyFirsTusestate from './components/MyFirsTusestate'
 // import Checksyntheticevent from './components/Checksyntheticevent'
@@ -16,18 +16,76 @@ import Contact from './components/Contact';
 import Component1 from './components/Component1';
 import Usercontext from './components/Usercontext';
 import Navbarr from './components/Navbarr';
+import Counterusingreducer from './components/Counterusingreducer';
+import { cartReducer,initialState } from './components/CartReducer';
+import products from './Products';
 
 const App = ()=>{
   const user="geeta uni"
   const [cart,setCart]=useState([]);
   const [showCart,setShowCart]=useState(false);
   const [search, setSearch] = useState("");
+  const [state,dispatch]= useReducer(cartReducer,initialState);
+  const[coupon,setcoupon]= useState("")
+  function Change(){
+
+  }
   return(
     <div>
-      <Usercontext.Provider value = {user}>
+      <Counterusingreducer/>
+
+      <h1> Shopping Cart</h1>
+      <input type='number' placeholder='write discount' value={coupon} onChange={(e)=>setcoupon(e.target.value)}/>
+        <h2> Total : Rs {state.total}</h2>
+        {
+          products.map((product)=>(
+            <div key={product.id}
+             style={{
+              border:"1px solid gray",
+              padding:15,
+              marginBottom:15
+             }}
+            >
+
+              <h3>{product.title}</h3>
+              <p>{product.price}</p>
+              <button onClick={()=>dispatch({
+                type:"ADD_ITEM",
+                payload:product
+              })}>Add to Cart</button>
+
+              <button onClick={()=>dispatch({
+                type:"APPLY_COUPON",
+                payload:Number(coupon)
+              })}>Apply Coupon</button>
+
+              <button onClick={()=>dispatch({
+                type:"INCREASE_QTY",
+                payload:product
+              })}>Increase QTY </button>
+            </div>
+          ))
+        }
+        <h2> Cart </h2>
+        {state.cart.map((item)=>(
+          <div key={item.id}>
+            {item.title}
+            {"-"}
+            Qty : {item.quantity}
+          
+
+          </div>
+          
+        ))}
+          <button onClick={()=>dispatch({
+                type:"CLEAR_CART"
+              
+              })}>Clear Cart </button>
+  
+      {/* <Usercontext.Provider value = {user}>
         <Navbarr/>
       </Usercontext.Provider>
-      <Component1/>
+      <Component1/> */}
   <Navbar
         cart={cart}
         showCart={showCart}
@@ -58,8 +116,8 @@ const App = ()=>{
       <Routes>
         <Route path='/' element={<MainLanding cart={cart} setCart={setCart} search={search} setSearch={setSearch}/>}></Route>
         <Route path='/about' element={<About/>}></Route>
-        <Route path='/home' element={<Home/>}></Route>
-        <Route path='/contact' element={<Contact/>}></Route>
+        <Route path='/home' element={<Studentregis/>}></Route>
+        <Route path='/cart' element={<Ccart/>}></Route>
 
       </Routes>
 

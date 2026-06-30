@@ -1,7 +1,8 @@
 import React from 'react'
-import Card from './components/card'
-import Cart from './components/Cart'
-const Cardcart = () => {
+import Cart from './Cart'
+import Card from './Card'
+
+const Ccart = () => {
   return (
     <div>
         <div style={{display:"flex"}}>
@@ -59,4 +60,4 @@ const Cardcart = () => {
   )
 }
 
-export default Cardcart
+export default Ccart
