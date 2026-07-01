@@ -19,6 +19,8 @@ import Navbarr from './components/Navbarr';
 import Counterusingreducer from './components/Counterusingreducer';
 import { cartReducer,initialState } from './components/CartReducer';
 import products from './Products';
+import Usecallback_memo from './components/Usecallback_memo';
+import Usememo from './components/Usememo';
 
 const App = ()=>{
   const user="geeta uni"
@@ -27,18 +29,56 @@ const App = ()=>{
   const [search, setSearch] = useState("");
   const [state,dispatch]= useReducer(cartReducer,initialState);
   const[coupon,setcoupon]= useState("")
-  function Change(){
 
+  const [sortOrder, setSortOrder] = useState("");
+const sortedProducts = useMemo(() => {
+  const temp = [...products];
+
+  if (sortOrder === "lowToHigh") {
+    temp.sort((a, b) => a.price - b.price);
+  } else if (sortOrder === "highToLow") {
+    temp.sort((a, b) => b.price - a.price);
   }
+
+  return temp;
+}, [sortOrder]);
+  
+
+  // function Change(){
+
+  // }
   return(
     <div>
-      <Counterusingreducer/>
+      <Usememo/>
+      <Usecallback_memo/>
+      {/* <Counterusingreducer/> */}
 
       <h1> Shopping Cart</h1>
       <input type='number' placeholder='write discount' value={coupon} onChange={(e)=>setcoupon(e.target.value)}/>
         <h2> Total : Rs {state.total}</h2>
+
+        <div>
+  <input
+    type="radio"
+    name="sort"
+    value="lowToHigh"
+    checked={sortOrder === "lowToHigh"}
+    onChange={(e) => setSortOrder(e.target.value)}
+  />
+  Low to High
+
+  <input
+    type="radio"
+    name="sort"
+    value="highToLow"
+    checked={sortOrder === "highToLow"}
+    onChange={(e) => setSortOrder(e.target.value)}
+  />
+  High to Low
+</div>
+
         {
-          products.map((product)=>(
+          sortedProducts.map((product)=>(
             <div key={product.id}
              style={{
               border:"1px solid gray",

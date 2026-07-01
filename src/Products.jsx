@@ -36,7 +36,7 @@ import React from 'react'
         "https://m.media-amazon.com/images/I/71n68KeFdTL._AC_UY327_FMwebp_QL65_.jpg",
       description: "Latest Washing Machine",
         quantity:0,
-        price:40000
+        price:400000
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ import React from 'react'
       image:
         "https://m.media-amazon.com/images/I/61rTjhWjUpL._AC_UL480_FMwebp_QL65_.jpg",
       description: "Best",
-      price:100
+      price:500000
     }
 ]
   
