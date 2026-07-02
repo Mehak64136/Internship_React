@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useReducer } from "react";
+import { useState, useReducer, useMemo } from "react";
 // import './App.css'
 // import Visitingcard from './components/visitingcard'
 import Navbar from './components/Navbar'
@@ -49,7 +49,8 @@ const sortedProducts = useMemo(() => {
   // }
   return(
     <div>
-      <Usememo/>
+      
+      {/* <Usememo/> */}
       <Usecallback_memo/>
       {/* <Counterusingreducer/> */}
 
